@@ -14,16 +14,20 @@ belak/zsh-utils path:completion/functions kind:autoload post:compstyle_zshzoo_se
 belak/zsh-utils path:history # Añade utilidades de historial
 
 # ---> Utilidades con fzf <---
+# ¡Es importante tener instalado fzf para estos plugins!
+# Debian/Ubuntu: sudo apt install fzf
+# Fedora: sudo dnf install fzf
+# Arch Linux: sudo pacman -S fzf
 Aloxaf/fzf-tab # Integración de autocompletado de Tab con fzf
 lincheney/fzf-tab-completion # Mejoras de autocompletado con Tab (con fzf)
 
 # ---> Plugins de Funcionalidad <---
 zdharma-continuum/fast-syntax-highlighting # Resaltado de sintaxis
-zsh-users/zsh-autosuggestions # Sugerencia automáticas basadas en el historial
+zsh-users/zsh-autosuggestions # Sugerencias automáticas basadas en el historial
 zsh-users/zsh-history-substring-search # Ir Arriba o Abajo (con flechas) para buscar en el historial
 
 # ---> Plugins de Oh My Zsh (OMZ) <---
 getantidote/use-omz # Permite cargar plugins de OMZ
-ohmyzsh/ohmyzsh path:plugins/sudo
-ohmyzsh/ohmyzsh path:plugins/wd
-ohmyzsh/ohmyzsh path:plugins/python
+ohmyzsh/ohmyzsh path:plugins/sudo # ¿Se le olvidó el 'sudo' antes de 'apt update'? ¡Presiona dos veces la tecla Esc y listo!
+ohmyzsh/ohmyzsh path:plugins/wd # Permite cambiar de directorio con un solo comando mediante wards o puntos de guardado personalizados.
+ohmyzsh/ohmyzsh path:plugins/python # Permite usar Python sin preocuparte de la instalación.
