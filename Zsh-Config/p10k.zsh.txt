@@ -1,0 +1,32 @@
+# =============================================================
+#   Segmento: Directorio (dir) -- CONFIGURACIÓN CORREGIDA
+# =============================================================
+
+# 1. Color para la ruta del directorio y el ícono de la casa.
+# Volvemos al azul original ('067') y le damos un toque más de intensidad ('068').
+# Es un azul claro, vibrante y muy legible.
+POWERLEVEL9K_DIR_FOREGROUND='020'
+
+# 2. Color para el directorio/archivo actual y el símbolo '~'.
+# Usaremos un rojo vino ('125') para un contraste fuerte y claro.
+POWERLEVEL9K_DIR_FOREGROUND_CURRENT_DIR='125'
+
+# Hacemos que el ancla (~) coincida con el color del directorio actual para consistencia.
+POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='125'
+
+# Current directory background color.
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  # Default current directory foreground color.
+  # typeset -g POWERLEVEL9K_DIR_FOREGROUND=073
+  # If directory is too long, shorten some of its segments to the shortest possible unique
+  # prefix. The shortened directory can be tab-completed to the original.
+  typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
+  # Replace removed segment suffixes with this symbol.
+  typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
+  # Color of the shortened directory segments.
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=250
+  # Color of the anchor directory segments. Anchor segments are never shortened. The first
+  # segment is always an anchor.
+  # typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=177
+  # Display anchor directory segments in bold.
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
