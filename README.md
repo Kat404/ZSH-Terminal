@@ -2,7 +2,7 @@
 
 ## 🏠 Introducción
 
-Al iniciar nuestra terminal (con Powerlevel10k y demás) veremos un prompt único:
+Al iniciar nuestra terminal veremos un prompt único:
 
 ```
 user_name@pc_name ~
@@ -279,11 +279,24 @@ Yazi es un administrador de archivos rápido y potente escrito en Rust.
 ### Instalación
 
 ```zsh
-# Para Ubuntu/Debian
-sudo apt install yazi
+# Para Arch Linux (sin necesidad de usar Rustup)
+sudo pacman -S yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
 
-# Usando Cargo (Rust)
-cargo install yazi-fm yazi-ueberzug yazi-cli
+# Para Debian/Ubuntu
+sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick
+
+# Construir manualmente (necesario si tu distro de Linux no tiene paquetes nativos para Yazi)
+# Instalar Rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup update
+
+# Clona el repositorio y construye Yazi
+git clone https://github.com/sxyazi/yazi.git
+cd yazi
+cargo build --release --locked
+
+# Añade 'yazi' y 'ya' a tu $PATH
+mv target/release/yazi target/release/ya /usr/local/bin/
 ```
 
 ### Uso Básico
@@ -318,26 +331,37 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.a
    touch ~/.zshrc.d/keybindings.zsh
    ```
 
-2. Añade plugins a `~/.zshrc_plugins.txt`:
+2. Añade plugins a `~/.zsh_plugins.txt`:
    ```zsh
    zsh-users/zsh-autosuggestions
    zsh-users/zsh-syntax-highlighting
    ```
-    - O añade los plugins seleccionadamente curados en el archivo `~/.zshrc_plugins.txt` en este repositorio.
+    - O añade los plugins seleccionadamente curados de este repostorio en tu archivo [`~/.zsh_plugins.txt`](./Zsh-Config/zsh_plugins.txt). 
 
 3. Añade el siguiente código al archivo `~/.zshrc`:
    ```zsh
    source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
    antidote load
    ```
-   - O añade el código ya personalizado out-of-the-box en el archivo `~/.zshrc` en este repositorio.
+   - O añade el código ya personalizado out-of-the-box de este repositorio en tu archivo [`~/.zshrc`](./Zsh-Config/zshrc).
 
-4. Recarga la configuración:
+4. Configura tus aliases y atajos de teclado copiando los archivos de configuración listos para usar:
+   ```zsh
+   # Copia los archivos de configuración predefinidos
+   cp -r /ruta/a/Terminal-Linux/Zsh-Config/.zshrc.d/* ~/.zshrc.d/
+   
+   # O copia manualmente los archivos si prefieres:
+   # cp /ruta/a/Terminal-Linux/Zsh-Config/aliases.zsh ~/.zshrc.d/
+   # cp /ruta/a/Terminal-Linux/Zsh-Config/keybindings.zsh ~/.zshrc.d/
+   ```
+   - Estos archivos contienen configuraciones optimizadas y listas para usar, incluyendo alias útiles y atajos de teclado personalizados.
+
+5. Recarga la configuración:
    ```zsh
    exit
    ```
 
-5. ¡Abre otra terminal y disfruta de tu nueva experiencia rápida en Zsh!
+6. ¡Abre otra terminal y disfruta de tu nueva experiencia rápida en Zsh!
 
 ## 🎨 Personalización de Powerlevel10k
 
