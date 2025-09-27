@@ -1,3 +1,4 @@
+# Este archivo '.zsh_plugins.zsh' se instala automáticamente la primera vez que se inician todos los plugins
 # No es necesario copiar este archivo, solo verifica que la ruta de cada plugin sea correcta en caso de cualquier fallo.
 fpath+=( "$HOME/.cache/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-powerlevel10k" )
 source "$HOME/.cache/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-powerlevel10k/powerlevel10k.zsh-theme"
