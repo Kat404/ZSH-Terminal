@@ -2,20 +2,53 @@
 
 ## 📚 Tabla de Contenidos <a id="tabla-de-contenidos"></a>
 
-1. [Introducción](#introduccion)
-2. [Navegación Básica](#navegacion-basica)
-3. [Gestión de Archivos y Directorios](#gestion-de-archivos-y-directorios)
-4. [Utilidades del Día a Día](#utilidades-del-dia-a-dia)
-5. [Búsquedas](#busquedas)
-6. [Tuberías y Redirecciones](#tuberias-y-redirecciones)
-7. [Atajos de Teclado Esenciales](#atajos-de-teclado-esenciales)
-8. [Editores de Texto](#editores-de-texto)
-9. [El Poder de Zsh y Oh My Zsh](#el-poder-de-zsh-y-oh-my-zsh)
-10. [Plugins de Oh My Zsh](#plugins-de-oh-my-zsh)
-11. [Alias útiles](#alias-utiles)
-12. [Yazi - Navegador de Archivos en Terminal](#yazi---navegador-de-archivos-en-terminal)
-13. [Antidote - Gestor de Plugins para Zsh](#antidote---gestor-de-plugins-para-zsh)
-14. [Personalización de Powerlevel10k](#personalizacion-de-powerlevel10k)
+1. [Instalación de Zsh](#instalacion-de-zsh)
+2. [Introducción](#introduccion)
+3. [Navegación Básica](#navegacion-basica)
+4. [Gestión de Archivos y Directorios](#gestion-de-archivos-y-directorios)
+5. [Utilidades del Día a Día](#utilidades-del-dia-a-dia)
+6. [Búsquedas](#busquedas)
+7. [Tuberías y Redirecciones](#tuberias-y-redirecciones)
+8. [Atajos de Teclado Esenciales](#atajos-de-teclado-esenciales)
+9. [Editores de Texto](#editores-de-texto)
+10. [El Poder de Zsh y Oh My Zsh](#el-poder-de-zsh-y-oh-my-zsh)
+11. [Plugins de Oh My Zsh](#plugins-de-oh-my-zsh)
+12. [Alias útiles](#alias-utiles)
+13. [Yazi - Navegador de Archivos en Terminal](#yazi---navegador-de-archivos-en-terminal)
+14. [Antidote - Gestor de Plugins para Zsh](#antidote---gestor-de-plugins-para-zsh)
+15. [Personalización de Powerlevel10k](#personalizacion-de-powerlevel10k)
+
+## 📦 Instalación de Zsh <a id="instalacion-de-zsh"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+
+Para iniciar con el contenido de este repositorio, necesitarás instalar `zsh` y aplicarlo como tu shell predeterminado.
+Según tu distribución de Linux será el comando que debes ejecutar para instalar `zsh`, este usualmente se puede encontrar de forma nativa en varios administradores de paquetes.
+
+### Debian/Ubuntu
+```bash
+sudo apt update && sudo apt install zsh
+```
+
+### Fedora
+```bash
+sudo dnf install zsh
+```
+
+### Arch Linux
+```bash
+sudo pacman -S zsh
+```
+
+### OpenSUSE
+```bash
+sudo zypper install zsh
+```
+### Post-instalación
+Después de instalar `zsh`, puedes aplicarlo como tu shell predeterminado ejecutando el siguiente comando:
+```bash
+chsh -s $(which zsh)
+```
+
+Por último, para que `zsh` se aplique correctamente deberás cerrar tu sesión (y volver a entrar) o simplemente reiniciar.
 
 ## 🏠 Introducción <a id="introduccion"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
 
@@ -291,15 +324,15 @@ source ~/.zshrc
 
 ## 🚀 Yazi - Navegador de Archivos en Terminal <a id="yazi---navegador-de-archivos-en-terminal"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
 
-Yazi es un administrador de archivos rápido y potente escrito en Rust.
+Yazi es un administrador de archivos rápido y potente escrito en Rust hecho para ser usado de manera eficiente en la terminal.
 
 ### Instalación
 
 ```zsh
-# Para Arch Linux (sin necesidad de usar Rustup)
+# Para Arch Linux (sin necesidad de usar Rustup, omitir todos los demás pasos)
 sudo pacman -S yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
 
-# Para Debian/Ubuntu
+# Para Debian/Ubuntu (únicamente se instalan las dependencias necesarias para Yazi, Yazi debe ser construido con Rustup)
 sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick
 
 # Construir manualmente (necesario si tu distro de Linux no tiene paquetes nativos para Yazi)
@@ -323,11 +356,20 @@ yazi  # Iniciar Yazi
 ```
 
 **Navegación:**
+
 - `h`/`←`: Directorio anterior
 - `l`/`→`: Entrar al directorio
 - `j`/`↓`: Bajar en la lista
 - `k`/`↑`: Subir en la lista
 - `q`: Salir
+- `a`: Crear un archivo o directorio (para crear un directorio debe terminar en `/`)
+- `d`: Borrar un archivo o directorio (son dirigidos al portapapeles)
+- `D`: Borrar un archivo o directorio (son eliminados permanentemente)
+- `y`: Copiar un archivo o directorio
+- `Y`: Dejar de copiar el archivo o directorio más reciente 
+- `x`: Cortar un archivo o directorio
+- `X`: Dejar de cortar el archivo o directorio más reciente
+- `p`: Pegar un archivo o directorio (funciona tanto con `y` como con `x`)
 
 ## ⚡ Antidote - Gestor de Plugins para Zsh <a id="antidote---gestor-de-plugins-para-zsh"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
 
