@@ -1,9 +1,10 @@
 # Esta es una configuración de preferencias personales para Powerlevel10k.
 # Usa colores diferentes a los predeterminados para tener una mejor visualización con el tema de Catppuccin Mocha usando la terminal kitty.
 # Los directorios anteriores tendrán un color azul marino y el directorio actual tendrá un color rojo vivo.
+# Si lo quieres usar, debes buscar la sección de 'dir: current directory', eliminar toda la configuración antes de 'local anchor files'
 
 # =============================================================
-#   Segmento: Directorio (dir) -- CONFIGURACIÓN CORREGIDA
+#                  Segmento: Directorio (dir) 
 # =============================================================
 
 # 1. Color para la ruta del directorio y el ícono de la casa.
