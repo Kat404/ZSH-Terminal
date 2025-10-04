@@ -186,13 +186,13 @@ rm archivo.txt
 Eliminar directorio vacío:
 
 ```zsh
-rmdir directorio_vacio
+rmdir directorio_vacio/
 ```
 
 Eliminar directorio con contenido (¡Usar con precaución!):
 
 ```zsh
-rm -r directorio_con_contenido
+rm -r directorio_con_contenido/
 ```
 
 ## 🛠️ Utilidades del Día a Día <a id="utilidades-del-dia-a-dia"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
@@ -206,21 +206,25 @@ sudo comando
 ### Gestión de paquetes (Debian/Ubuntu)
 
 Actualizar lista de paquetes:
+
 ```zsh
 sudo apt update
 ```
 
 Actualizar el sistema:
+
 ```zsh
 sudo apt upgrade
 ```
 
 Instalar software:
+
 ```zsh
 sudo apt install nombre_paquete
 ```
 
 Eliminar software:
+
 ```zsh
 sudo apt remove nombre_paquete
 ```
@@ -485,7 +489,7 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.a
    zsh-users/zsh-syntax-highlighting
    ```
 
-    - O añade los plugins seleccionadamente curados de este repostorio en tu archivo [`~/.zsh_plugins.txt`](./Zsh-Config/.zsh_plugins.txt).
+    - O añade los plugins seleccionadamente curados de este repostorio en tu archivo [`~/.zsh_plugins.txt`](/.zsh_plugins.txt).
 
 3. Añade el siguiente código al archivo `~/.zshrc`:
 
@@ -494,7 +498,7 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.a
    antidote load
    ```
 
-   - O añade el código ya personalizado out-of-the-box de este repositorio en tu archivo [`~/.zshrc`](./Zsh-Config/.zshrc).
+   - O añade el código ya personalizado out-of-the-box de este repositorio en tu archivo [`~/.zshrc`](/.zshrc).
 
 4. Configura tus aliases y atajos de teclado:
 
