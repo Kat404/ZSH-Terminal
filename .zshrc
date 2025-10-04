@@ -9,10 +9,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Lazy-load (autocargado) de archivos con funciones Zsh desde un directorio.
-# ZFUNCDIR=${ZDOTDIR:-$HOME}/.zfunctions
-# fpath=($ZFUNCDIR $fpath)
-# autoload -Uz $ZFUNCDIR/*(.:t)
+# Lazy-load para antidote y generar el archivo estático solo cuando sea necesario
+#zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
+#if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+#  (
+#    source /path-to-antidote/antidote.zsh
+#    antidote bundle <${zsh_plugins}.txt >${zsh_plugins}.zsh
+#  )
+#fi
+#source ${zsh_plugins}.zsh
 
 # Crea una configuración asombrosa de Zsh usando los plugins de antidote
 source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
