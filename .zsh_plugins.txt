@@ -1,33 +1,59 @@
-# Lista de Plugins para Antidote
+# Plugin List for Antidote / Lista de Plugins para Antidote
 # ~/.zsh_plugins.txt
 
-# ---> Tema <---
+# ---> Theme / Tema <---
 # Powerlevel10k
 romkatv/powerlevel10k
 
-# ---> Autocompletado <---
-mattmc3/ez-compinit # Hace el compinit de zsh funcione mucho mejor
-zsh-users/zsh-completions # Añade completados adicionales a zsh
-belak/zsh-utils path:completion/functions kind:autoload post:compstyle_zshzoo_setup # Estilo de completado
+# ---> Autocompletion / Autocompletado <---
+# EN: Makes zsh compinit work much better
+# ES: Hace que zsh compinit funcione mucho mejor
+mattmc3/ez-compinit
+# EN: Adds additional completions to zsh
+# ES: Añade completados adicionales a zsh
+zsh-users/zsh-completions
+# EN: Completion style setup (autoload functions + zshzoo style)
+# ES: Configuración del estilo de completado (funciones autoload + estilo zshzoo)
+belak/zsh-utils path:completion/functions kind:autoload post:compstyle_zshzoo_setup
 
-# ---> Historial <---
-belak/zsh-utils path:history # Añade utilidades de historial
+# ---> History / Historial <---
+# EN: Adds history utilities
+# ES: Añade utilidades de historial
+belak/zsh-utils path:history
 
-# ---> Utilidades con fzf <---
-# ¡Es importante tener instalado fzf para estos plugins!
+# ---> fzf Utilities / Utilidades con fzf <---
+# It's important to have fzf installed for these plugins! / ¡Es importante tener fzf instalado para estos plugins!
 # Debian/Ubuntu: sudo apt install fzf
 # Fedora: sudo dnf install fzf
 # Arch Linux: sudo pacman -S fzf
-Aloxaf/fzf-tab # Integración de autocompletado de Tab con fzf
-lincheney/fzf-tab-completion # Mejoras de autocompletado con Tab (con fzf)
+# EN: Tab autocompletion integration with fzf
+# ES: Integración de autocompletado de Tab con fzf
+Aloxaf/fzf-tab
+# EN: Tab autocompletion improvements (with fzf)
+# ES: Mejoras de autocompletado con Tab (con fzf)
+lincheney/fzf-tab-completion
 
-# ---> Plugins de Funcionalidad <---
-zdharma-continuum/fast-syntax-highlighting # Resaltado de sintaxis
-zsh-users/zsh-autosuggestions # Sugerencias automáticas basadas en el historial
-zsh-users/zsh-history-substring-search # Ir Arriba o Abajo (con flechas) para buscar en el historial
+# ---> Functionality Plugins / Plugins de Funcionalidad <---
+# EN: Syntax highlighting
+# ES: Resaltado de sintaxis
+zdharma-continuum/fast-syntax-highlighting
+# EN: Automatic suggestions based on history
+# ES: Sugerencias automáticas basadas en el historial
+zsh-users/zsh-autosuggestions
+# EN: Use Up/Down arrows to search history by substring
+# ES:  Usa las flechas Arriba/Abajo para buscar en el historial por subcadenas
+zsh-users/zsh-history-substring-search
 
-# ---> Plugins de Oh My Zsh (OMZ) <---
-getantidote/use-omz # Permite cargar plugins de OMZ
-ohmyzsh/ohmyzsh path:plugins/sudo # ¿Se le olvidó el 'sudo' antes de 'apt update'? ¡Presiona dos veces la tecla Esc y listo!
-ohmyzsh/ohmyzsh path:plugins/wd # Permite cambiar de directorio con un solo comando mediante wards o puntos de guardado personalizados.
-ohmyzsh/ohmyzsh path:plugins/python # Permite usar Python sin preocuparte de la instalación.
+# ---> Oh My Zsh (OMZ) Plugins <---
+# EN: Allows loading OMZ plugins
+# ES: Permite cargar plugins de OMZ
+getantidote/use-omz
+# EN: Forgot 'sudo' before 'apt update'? Press Esc twice and you're set!
+# ES: ¿Olvidaste 'sudo' antes de 'apt update'? ¡Presiona Esc dos veces y listo!
+ohmyzsh/ohmyzsh path:plugins/sudo
+# EN: Change directories with a single command using waypoints (wd)
+# ES: Cambia de directorio con un solo comando usando puntos de guardado (wd)
+ohmyzsh/ohmyzsh path:plugins/wd
+# EN: Helper functions for Python workflows
+# ES: Funciones de ayuda para flujos de Trabajo con Python
+ohmyzsh/ohmyzsh path:plugins/python

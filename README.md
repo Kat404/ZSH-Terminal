@@ -1,27 +1,29 @@
-# 🚀 Tutorial Definitivo de Zsh
+# 🚀 The Ultimate Zsh Tutorial
 
-## 📚 Tabla de Contenidos <a id="tabla-de-contenidos"></a>
+[![README en Español](https://img.shields.io/badge/README-en%20Español-blue.svg)](README-es.md)
 
-1. [Instalación de Zsh](#instalacion-de-zsh)
-2. [Introducción](#introduccion)
-3. [Navegación Básica](#navegacion-basica)
-4. [Gestión de Archivos y Directorios](#gestion-de-archivos-y-directorios)
-5. [Utilidades del Día a Día](#utilidades-del-dia-a-dia)
-6. [Búsquedas](#busquedas)
-7. [Tuberías y Redirecciones](#tuberias-y-redirecciones)
-8. [Atajos de Teclado Esenciales](#atajos-de-teclado-esenciales)
-9. [Editores de Texto](#editores-de-texto)
-10. [El Poder de Zsh y Oh My Zsh](#el-poder-de-zsh-y-oh-my-zsh)
-11. [Plugins de Oh My Zsh](#plugins-de-oh-my-zsh)
-12. [Alias útiles](#alias-utiles)
-13. [Yazi - Navegador de Archivos en Terminal](#yazi---navegador-de-archivos-en-terminal)
-14. [Antidote - Gestor de Plugins para Zsh](#antidote---gestor-de-plugins-para-zsh)
-15. [Personalización de Powerlevel10k](#personalizacion-de-powerlevel10k)
+## 📚 Table of Contents <a id="table-of-contents"></a>
 
-## 📦 Instalación de Zsh <a id="instalacion-de-zsh"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+1. [Zsh Installation](#zsh-installation)
+2. [Introduction](#introduction)
+3. [Basic Navigation](#basic-navigation)
+4. [File and Directory Management](#file-and-directory-management)
+5. [Day-to-Day Utilities](#day-to-day-utilities)
+6. [Searches](#searches)
+7. [Pipes and Redirections](#pipes-and-redirections)
+8. [Essential Keyboard Shortcuts](#essential-keyboard-shortcuts)
+9. [Text Editors](#text-editors)
+10. [The Power of Zsh and Oh My Zsh](#the-power-of-zsh-and-oh-my-zsh)
+11. [Oh My Zsh Plugins](#oh-my-zsh-plugins)
+12. [Useful Aliases](#useful-aliases)
+13. [Yazi - Terminal File Browser](#yazi---terminal-file-browser)
+14. [Antidote - Zsh Plugin Manager](#antidote---zsh-plugin-manager)
+15. [Powerlevel10k Customization](#powerlevel10k-customization)
 
-Para iniciar con el contenido de este repositorio, necesitarás instalar `zsh` y aplicarlo como tu shell predeterminado.
-Según tu distribución de Linux será el comando que debes ejecutar para instalar `zsh`, este usualmente se puede encontrar de forma nativa en varios administradores de paquetes.
+## 📦 Zsh Installation <a id="zsh-installation"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
+
+To get started with the content of this repository, you'll need to install `zsh` and set it as your default shell.
+Depending on your Linux distribution, the command to install `zsh` will vary. It can usually be found natively in various package managers.
 
 ### Debian/Ubuntu
 
@@ -47,43 +49,43 @@ sudo pacman -S zsh
 sudo zypper install zsh
 ```
 
-### Post-instalación
+### Post-installation
 
-Después de instalar `zsh`, puedes aplicarlo como tu shell predeterminado ejecutando el siguiente comando:
+After installing `zsh`, you can set it as your default shell by running the following command:
 
 ```bash
 chsh -s $(which zsh)
 ```
 
-Por último, para que `zsh` se aplique correctamente deberás cerrar tu sesión (y volver a entrar) o simplemente reiniciar.
+Finally, for `zsh` to be applied correctly, you will need to log out (and log back in) or simply restart your system.
 
-## 🏠 Introducción <a id="introduccion"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## 🏠 Introduction <a id="introduction"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-Al iniciar nuestra terminal veremos un prompt único:
+When we start our terminal, we will see a unique prompt:
 
 ```text
 user_name@pc_name ~
 ```
 
-- `user_name@pc_name`: Es el usuario@nombre_del_equipo
-- `~`: Es el directorio actual. El símbolo `~` (llamado "tilde") es un atajo para tu carpeta personal (`/home/usuario/`).
+- `user_name@pc_name`: This is the user@hostname
+- `~`: This is the current directory. The `~` symbol (called a "tilde") is a shortcut for your home folder (`/home/user/`).
 
-> **Nota**: Usando Powerlevel10k verás un indicador visual (✓ o ✗) que muestra si el último comando se ejecutó con éxito o falló.
+> **Note**: Using Powerlevel10k, you will see a visual indicator (✓ or ✗) that shows whether the last command was successful or failed.
 
-## 📂 Navegación Básica <a id="navegacion-basica"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## 📂 Basic Navigation <a id="basic-navigation"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-### `ls` - Listar archivos y directorios
+### `ls` - List files and directories
 
-Lista el contenido del directorio actual.
+Lists the content of the current directory.
 
-**Opciones útiles:**
+**Useful options:**
 
-- `ls -l`: Muestra una lista detallada (permisos, propietario, tamaño, fecha).
-- `ls -a`: Muestra todos los archivos, incluyendo los ocultos (que empiezan con .).
-- `ls -h`: Usado con `-l`, muestra el tamaño en formato humano (KB, MB, GB).
-- `ls --color`: Muestra la salida con colores, diferenciando carpetas de archivos.
+- `ls -l`: Shows a detailed list (permissions, owner, size, date).
+- `ls -a`: Shows all files, including hidden ones (those starting with .).
+- `ls -h`: Used with `-l`, shows the size in a human-readable format (KB, MB, GB).
+- `ls --color`: Displays the output with colors, differentiating folders from files.
 
-**Atajos de Oh My Zsh:**
+**Oh My Zsh Shortcuts:**
 
 ```zsh
 alias ll='ls -l'
@@ -91,259 +93,259 @@ alias l='ls -CF'
 alias la='ls -A'
 ```
 
-### `cd` - Cambiar de directorio
+### `cd` - Change directory
 
-- `cd Descargas`: Ir a la carpeta de Descargas
-- `cd` o `cd ~`: Volver a tu carpeta personal
-- `cd -`: Volver al directorio anterior
-- `cd ..`: Subir un nivel
-- `cd ../..`: Subir dos niveles
+- `cd Downloads`: Go to the Downloads folder
+- `cd` or `cd ~`: Return to your home folder
+- `cd -`: Return to the previous directory
+- `cd ..`: Go up one level
+- `cd ../..`: Go up two levels
 
-> **Consejo**: Escribe `cd De` y presiona `Tab`. Zsh autocompletará a `Descargas/` por ti.
+> **Tip**: Type `cd Do` and press `Tab`. Zsh will autocomplete to `Downloads/` for you.
 
-### `pwd` - Mostrar directorio actual
+### `pwd` - Show current directory
 
-Muestra la ruta completa del directorio actual.
+Shows the full path of the current directory.
 
 ```zsh
 pwd
-# Salida: /home/usuario
+# Output: /home/user
 ```
 
-## 📁 Gestión de Archivos y Directorios <a id="gestion-de-archivos-y-directorios"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## 📁 File and Directory Management <a id="file-and-directory-management"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-### `mkdir` - Crear directorios
+### `mkdir` - Create directories
 
-Crear un directorio simple:
+Create a simple directory:
 
 ```zsh
-mkdir Proyectos
+mkdir Projects
 ```
 
-Crear directorios anidados:
+Create nested directories:
 
 ```zsh
-mkdir -p Proyectos/2025/Web
+mkdir -p Projects/2025/Web
 ```
 
-### `touch` - Crear archivos vacíos
+### `touch` - Create empty files
 
 ```zsh
-touch nota.txt
+touch note.txt
 touch app.py
 ```
 
-### `cp` - Copiar archivos y directorios
+### `cp` - Copy files and directories
 
-Copiar un archivo:
-
-```zsh
-cp archivo.txt Documentos/
-```
-
-Copiar y renombrar:
+Copy a file:
 
 ```zsh
-cp archivo.txt copia_archivo.txt
+cp file.txt Documents/
 ```
 
-Copiar directorios (usar -r para recursivo):
+Copy and rename:
 
 ```zsh
-cp -r directorio/ copia_directorio/
+cp file.txt file_copy.txt
 ```
 
-### `mv` - Mover o renombrar
-
-Renombrar archivo:
+Copy directories (use -r for recursive):
 
 ```zsh
-mv viejo.txt nuevo.txt
+cp -r directory/ directory_copy/
 ```
 
-Mover archivo:
+### `mv` - Move or rename
+
+Rename a file:
 
 ```zsh
-mv documento.txt Documentos/
+mv old.txt new.txt
 ```
 
-Mover y renombrar:
+Move a file:
 
 ```zsh
-mv archivo.txt Documentos/nuevo_nombre.txt
+mv document.txt Documents/
 ```
 
-### `rm` - Eliminar archivos y directorios
-
-> ⚠️ **¡Cuidado!** Los archivos eliminados no van a la papelera.
-
-Eliminar archivo:
+Move and rename:
 
 ```zsh
-rm archivo.txt
+mv file.txt Documents/new_name.txt
 ```
 
-Eliminar directorio vacío:
+### `rm` - Delete files and directories
+
+> ⚠️ **Warning!** Deleted files do not go to the trash.
+
+Delete a file:
 
 ```zsh
-rmdir directorio_vacio/
+rm file.txt
 ```
 
-Eliminar directorio con contenido (¡Usar con precaución!):
+Delete an empty directory:
 
 ```zsh
-rm -r directorio_con_contenido/
+rmdir empty_directory/
 ```
 
-## 🛠️ Utilidades del Día a Día <a id="utilidades-del-dia-a-dia"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
-
-### `sudo` - Ejecutar como superusuario
+Delete a directory with content (Use with caution!):
 
 ```zsh
-sudo comando
+rm -r directory_with_content/
 ```
 
-### Gestión de paquetes (Debian/Ubuntu)
+## 🛠️ Day-to-Day Utilities <a id="day-to-day-utilities"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-Actualizar lista de paquetes:
+### `sudo` - Execute as superuser
+
+```zsh
+sudo command
+```
+
+### Package management (Debian/Ubuntu)
+
+Update package list:
 
 ```zsh
 sudo apt update
 ```
 
-Actualizar el sistema:
+Upgrade the system:
 
 ```zsh
 sudo apt upgrade
 ```
 
-Instalar software:
+Install software:
 
 ```zsh
-sudo apt install nombre_paquete
+sudo apt install package_name
 ```
 
-Eliminar software:
+Remove software:
 
 ```zsh
-sudo apt remove nombre_paquete
+sudo apt remove package_name
 ```
 
-## 🔍 Búsquedas <a id="busquedas"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## 🔍 Searches <a id="searches"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-### `find` - Buscar archivos
+### `find` - Search for files
 
-Buscar archivos .conf:
+Find .conf files:
 
 ```zsh
 find . -name "*.conf"
 ```
 
-Buscar archivos modificados en los últimos 7 días:
+Find files modified in the last 7 days:
 
 ```zsh
-find /ruta -mtime -7
+find /path -mtime -7
 ```
 
-### `grep` - Buscar en archivos
+### `grep` - Search within files
 
-Buscar "error" en archivos .log:
+Search for "error" in .log files:
 
 ```zsh
 grep "error" *.log
 ```
 
-Búsqueda recursiva:
+Recursive search:
 
 ```zsh
-grep -r "palabra" /directorio/
+grep -r "word" /directory/
 ```
 
-## 🔄 Tuberías y Redirecciones <a id="tuberias-y-redirecciones"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## 🔄 Pipes and Redirections <a id="pipes-and-redirections"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-Tubería (|): Conectar comandos
+Pipe (|): Connect commands
 
 ```zsh
 ps aux | grep firefox
 ```
 
-Redirección (>): Guardar salida en archivo
+Redirection (>): Save output to a file
 
 ```zsh
-ls -l > lista_archivos.txt
+ls -l > file_list.txt
 ```
 
-Añadir al final de archivo (>>)
+Append to the end of a file (>>)
 
 ```zsh
-echo "nueva línea" >> archivo.txt
+echo "new line" >> file.txt
 ```
 
-## ⌨️ Atajos de Teclado Esenciales <a id="atajos-de-teclado-esenciales"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## ⌨️ Essential Keyboard Shortcuts <a id="essential-keyboard-shortcuts"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-- `Ctrl + C`: Cancelar comando actual
-- `Ctrl + D`: Cerrar terminal
-- `Ctrl + L`: Limpiar pantalla
-- `Ctrl + A`: Ir al inicio de la línea
-- `Ctrl + E`: Ir al final de la línea
-- `Ctrl + U`: Borrar hasta el inicio de la línea
-- `Ctrl + K`: Borrar hasta el final de la línea
-- `Ctrl + W`: Borrar palabra anterior
-- `Ctrl + R`: Buscar en el historial
+- `Ctrl + C`: Cancel the current command
+- `Ctrl + D`: Close the terminal
+- `Ctrl + L`: Clear the screen
+- `Ctrl + A`: Go to the beginning of the line
+- `Ctrl + E`: Go to the end of the line
+- `Ctrl + U`: Delete up to the beginning of the line
+- `Ctrl + K`: Delete up to the end of the line
+- `Ctrl + W`: Delete the previous word
+- `Ctrl + R`: Search in history
 
-## 📝 Editores de Texto <a id="editores-de-texto"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## 📝 Text Editors <a id="text-editors"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-### `nano` - Editor simple
+### `nano` - Simple editor
 
 ```zsh
-nano archivo.txt
+nano file.txt
 ```
 
-**Comandos básicos:**
+**Basic commands:**
 
-- `Ctrl + O`: Guardar
-- `Ctrl + X`: Salir
-- `Ctrl + K`: Cortar línea
-- `Ctrl + U`: Pegar
+- `Ctrl + O`: Save
+- `Ctrl + X`: Exit
+- `Ctrl + K`: Cut line
+- `Ctrl + U`: Paste
 
-### `neovim`/`vim` - Editor avanzado
+### `neovim`/`vim` - Advanced editor
 
 ```zsh
-nvim archivo.conf
+nvim file.conf
 ```
 
-**Modos principales:**
+**Main modes:**
 
-1. **Modo Normal (al abrir)**: Para navegación
-   - `h`, `j`, `k`, `l`: Moverse (izquierda, abajo, arriba, derecha)
-   - `i`: Entrar al modo Insertar
-   - `v`: Modo Visual para seleccionar texto
+1.  **Normal Mode (on open)**: For navigation
+    - `h`, `j`, `k`, `l`: Move (left, down, up, right)
+    - `i`: Enter Insert mode
+    - `v`: Visual mode to select text
 
-2. **Modo Insertar (i)**: Para escribir texto
-   - `Esc`: Volver al modo Normal
+2.  **Insert Mode (i)**: For writing text
+    - `Esc`: Return to Normal mode
 
-3. **Comandos (desde modo Normal, presiona `:`)**:
-   - `:w`: Guardar
-   - `:q`: Salir
-   - `:wq`: Guardar y salir
-   - `:q!`: Forzar salida sin guardar
+3.  **Commands (from Normal mode, press `:`)**:
+    - `:w`: Save
+    - `:q`: Quit
+    - `:wq`: Save and quit
+    - `:q!`: Force quit without saving
 
-## ⚡ El Poder de Zsh y Oh My Zsh <a id="el-poder-de-zsh-y-oh-my-zsh"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## ⚡ The Power of Zsh and Oh My Zsh <a id="the-power-of-zsh-and-oh-my-zsh"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-### Autocompletado Inteligente (Tab)
+### Smart Autocompletion (Tab)
 
-- Rutas: `cd /v/l` + `Tab` → `cd /var/log`
-- Comandos: `git ch` + `Tab` → Muestra opciones como `checkout`, `cherry-pick`
-- Paquetes: `apt install` + `Tab` → Lista de paquetes disponibles
+- Paths: `cd /v/l` + `Tab` → `cd /var/log`
+- Commands: `git ch` + `Tab` → Shows options like `checkout`, `cherry-pick`
+- Packages: `apt install` + `Tab` → Lists available packages
 
-### Búsqueda en el Historial
+### History Search
 
-- `Ctrl + R`: Busca en el historial de comandos
-- Flechas arriba/abajo: Navega por comandos recientes
+- `Ctrl + R`: Searches through command history
+- Up/Down arrows: Navigate through recent commands
 
-## 🔌 Plugins de Oh My Zsh <a id="plugins-de-oh-my-zsh"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## 🔌 Oh My Zsh Plugins <a id="oh-my-zsh-plugins"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-Edita `~/.zshrc` para activar plugins:
+Edit `~/.zshrc` to enable plugins:
 
 ```zsh
 plugins=(
@@ -355,59 +357,59 @@ plugins=(
 )
 ```
 
-**Plugins recomendados:**
+**Recommended plugins:**
 
-- **git**: Atajos como `gaa` para `git add --all`
-- **z**: Navegación rápida entre directorios frecuentes
-- **colored-man-pages**: Manuales a color
-- **wd**: Marcadores de directorios
+- **git**: Shortcuts like `gaa` for `git add --all`
+- **z**: Fast navigation between frequent directories
+- **colored-man-pages**: Manuals in color
+- **wd**: Directory bookmarks
 
-## 🛠️ Alias útiles <a id="alias-utiles"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## 🛠️ Useful Aliases <a id="useful-aliases"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-Añade esto a tu `~/.zshrc`, puedes ir a la sección [Antidote](#antidote---gestor-de-plugins-para-zsh) y seguir todo el tutorial para tener una mejor administración y organización de tu `~/.zshrc`:
+Add this to your `~/.zshrc`. You can go to the [Antidote](#antidote---zsh-plugin-manager) section and follow the tutorial for better management and organization of your `~/.zshrc`:
 
 ```zsh
-# Actualización del sistema
+# System update
 alias update="sudo apt update && sudo apt upgrade -y && flatpak update"
 
-# Atajos comunes
+# Common shortcuts
 alias cls="clear"
 alias fsh="fastfetch"
 alias nsh="neofetch"
 
-# Comandos en español
+# Spanish commands
 alias salir="exit"
 alias ir="cd"
-alias cds="yazi"  # Administrador de archivos
+alias cds="yazi"  # File manager
 ```
 
-Recarga la configuración:
+Reload the configuration:
 
 ```zsh
 source ~/.zshrc
 ```
 
-## 🚀 Yazi - Navegador de Archivos en Terminal <a id="yazi---navegador-de-archivos-en-terminal"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## 🚀 Yazi - Terminal File Browser <a id="yazi---terminal-file-browser"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-Yazi es un administrador de archivos rápido y potente escrito en Rust hecho para ser usado de manera eficiente en la terminal.
+Yazi is a fast and powerful file manager written in Rust, designed for efficient use in the terminal.
 
-### Instalación
+### Installation
 
-#### Para Arch Linux (sin necesidad de usar Rustup, omitir todos los demás pasos)
+#### For Arch Linux (no need to use Rustup, skip all other steps)
 
 ```zsh
 sudo pacman -S yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
 ```
 
-#### Para Debian/Ubuntu (Yazi debe ser construido con Rustup)
+#### For Debian/Ubuntu (Yazi must be built with Rustup)
 
 ```zsh
 sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick
 ```
 
-#### Construir manualmente (necesario si tu distro de Linux no tiene paquetes nativos para Yazi)
+#### Build manually (necessary if your Linux distro does not have native packages for Yazi)
 
-##### Instalar Rustup
+##### Install Rustup
 
 ```zsh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -417,7 +419,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup update
 ```
 
-##### Clona el repositorio y construye Yazi
+##### Clone the repository and build Yazi
 
 ```zsh
 git clone https://github.com/sxyazi/yazi.git
@@ -431,142 +433,130 @@ cd yazi
 cargo build --release --locked
 ```
 
-##### Añade 'yazi' y 'ya' a tu $PATH
+##### Add 'yazi' and 'ya' to your $PATH
 
 ```zsh
 sudo mv target/release/yazi target/release/ya /usr/local/bin/
 ```
 
-### Uso Básico
+### Basic Usage
 
-Iniciar Yazi:
+Start Yazi:
 
 ```zsh
-yazi 
+yazi
 ```
 
-**Navegación:**
+**Navigation:**
 
-- `h`/`←`: Directorio anterior
-- `l`/`→`: Entrar al directorio
-- `j`/`↓`: Bajar en la lista
-- `k`/`↑`: Subir en la lista
-- `q`: Salir
-- `a`: Crear un archivo o directorio (para crear un directorio debe terminar en `/`)
-- `d`: Borrar un archivo o directorio (son dirigidos al portapapeles)
-- `D`: Borrar un archivo o directorio (son eliminados permanentemente)
-- `y`: Copiar un archivo o directorio
-- `Y`: Dejar de copiar el archivo o directorio más reciente 
-- `x`: Cortar un archivo o directorio
-- `X`: Dejar de cortar el archivo o directorio más reciente
-- `p`: Pegar un archivo o directorio (funciona tanto con `y` como con `x`)
+- `h`/`←`: Previous directory
+- `l`/`→`: Enter directory
+- `j`/`↓`: Move down the list
+- `k`/`↑`: Move up the list
+- `q`: Quit
+- `a`: Create a file or directory (must end with `/` to create a directory)
+- `d`: Delete a file or directory (sent to the clipboard/trash)
+- `D`: Permanently delete a file or directory
+- `y`: Copy a file or directory
+- `Y`: Stop copying the most recent file or directory
+- `x`: Cut a file or directory
+- `X`: Stop cutting the most recent file or directory
+- `p`: Paste a file or directory (works with both `y` and `x`)
 
-## 🧪 Antidote - Gestor de Plugins para Zsh <a id="antidote---gestor-de-plugins-para-zsh"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
+## 🧪 Antidote - Zsh Plugin Manager <a id="antidote---zsh-plugin-manager"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-Antidote es la cura para el manejo lento de plugins en Zsh.
+Antidote is the cure for slow Zsh plugin management.
 
-### Instalación
+### Installation
 
 ```zsh
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
 ```
 
-### Configuración
+### Configuration
 
-1. Crea los archivos necesarios:
+1.  Create the necessary files:
 
-   ```zsh
-   touch ~/.zshrc_plugins.txt
-   mkdir -p ~/.zshrc.d/
-   touch ~/.zshrc.d/aliases.zsh
-   touch ~/.zshrc.d/keybindings.zsh
-   ```
+    ```zsh
+    touch ~/.zshrc_plugins.txt
+    mkdir -p ~/.zshrc.d/
+    touch ~/.zshrc.d/aliases.zsh
+    touch ~/.zshrc.d/keybindings.zsh
+    ```
 
-2. Añade plugins a `~/.zsh_plugins.txt`:
+2.  Add plugins to `~/.zsh_plugins.txt`:
 
-   ```zsh
-   zsh-users/zsh-autosuggestions
-   zsh-users/zsh-syntax-highlighting
-   ```
+    ```zsh
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-syntax-highlighting
+    ```
 
-    - O añade los plugins seleccionadamente curados de este repostorio en tu archivo [`~/.zsh_plugins.txt`](/.zsh_plugins.txt).
+    - Or add the carefully curated plugins from this repository to your [`~/.zsh_plugins.txt`](/.zsh_plugins.txt) file.
 
-3. Añade el siguiente código al archivo `~/.zshrc`:
+3.  Add the following code to your `~/.zshrc` file:
 
-   ```zsh
-   source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
-   antidote load
-   ```
+    ```zsh
+    source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
+    antidote load
+    ```
 
-   - O añade el código ya personalizado out-of-the-box de este repositorio en tu archivo [`~/.zshrc`](/.zshrc).
+    - Or add the out-of-the-box customized code from this repository to your [`~/.zshrc`](/.zshrc) file.
 
-4. Configura tus aliases y atajos de teclado:
+4.  Configure your aliases and keybindings:
 
-   ### Opción 1: Usar la configuración predefinida
+    ### Option 1: Use the predefined configuration
 
-   Copiar configuración de aliases:
+    Copy alias configuration:
 
-   ```zsh
-   cp zshrc.d/aliases.zsh ~/.zshrc.d/
-   ```
+    ```zsh
+    cp zshrc.d/aliases.zsh ~/.zshrc.d/
+    ```
 
-   Copiar configuración de atajos de teclado:
+    Copy keybinding configuration:
 
-   ```zsh
-   cp zshrc.d/keybindings.zsh ~/.zshrc.d/
-   ```
+    ```zsh
+    cp zshrc.d/keybindings.zsh ~/.zshrc.d/
+    ```
 
-   ### Opción 2: Personalizar manualmente
+    ### Option 2: Customize manually
 
-   #### Configurar aliases
+    #### Configure aliases
 
-   Edita el archivo de aliases con tu editor favorito:
+    Edit the aliases file with your favorite editor:
 
-   Para editar con nano:
+    To edit with nano:
 
-   ```zsh
-   nano ~/.zshrc.d/aliases.zsh
-   ```
+    ```zsh
+    nano ~/.zshrc.d/aliases.zsh
+    ```
 
-   O con VSCode (descomenta la línea):
+    #### Configure keybindings
 
-   ```zsh
-   code ~/.zshrc.d/aliases.zsh
-   ```
+    Customize the keybindings according to your preferences:
 
-   #### Configurar atajos de teclado
+    To edit with nano:
 
-   Personaliza los atajos de teclado según tus preferencias:
+    ```zsh
+    nano ~/.zshrc.d/keybindings.zsh
+    ```
 
-   Para editar con nano:
+    > 💡 **Tip:** The configuration files include commented-out examples that you can uncomment or modify as needed.
 
-   ```zsh
-   nano ~/.zshrc.d/keybindings.zsh
-   ```
+5.  Reload the configuration:
 
-   O con VSCode (descomenta la línea):
+    ```zsh
+    exit
+    ```
 
-   ```zsh
-   code ~/.zshrc.d/keybindings.zsh
-   ```
+6.  Open another terminal and enjoy your new, fast Zsh experience!
 
-   > 💡 **Consejo:** Los archivos de configuración incluyen ejemplos comentados que puedes descomentar o modificar según necesites.
+## 🎨 Powerlevel10k Customization <a id="powerlevel10k-customization"></a> <small><a href="#table-of-contents" title="Back to top">↥</a></small>
 
-5. Recarga la configuración:
-
-   ```zsh
-   exit
-   ```
-
-6. ¡Abre otra terminal y disfruta de tu nueva experiencia rápida en Zsh!
-
-## 🎨 Personalización de Powerlevel10k <a id="personalizacion-de-powerlevel10k"></a> <small><a href="#tabla-de-contenidos" title="Volver al índice">↥</a></small>
-
-Después de instalar Oh My Zsh o Antidore con el tema Powerlevel10k, ejecuta el siguiente comando (en caso de que la configuración de Powerlevel10k no haya iniciado automáticamente):
+After installing Oh My Zsh or Antidote with the Powerlevel10k theme, run the following command (in case the Powerlevel10k configuration wizard did not start automatically):
 
 ```zsh
 p10k configure
 ```
 
-Sigue el asistente para personalizar tu prompt.
-¿Qué tal? ¿Fácil verdad?
+Follow the wizard to customize your prompt.
+How about that? Easy, right?

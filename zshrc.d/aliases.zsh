@@ -7,7 +7,9 @@
 # Actualización del sistema y utilidades básicas
 # alias update='sudo apt update && sudo apt upgrade -y && flatpak update' # <-- Actualizar todo el sistema (APT) incluyendo Flatpaks
 # alias update='sudo dnf update -y && flatpak update' # <-- Actualizar todo el sistema (DNF) incluyendo Flatpaks
-# alias update='paru -Syu && flatpak update' # <-- Actualizar todo el sistema incluyendo AUR y Flatpak
+# alias update='paru -Syu && flatpak update' # <-- Actualizar todo el sistema incluyendo AUR (usando Paru) y Flatpak
+# alias update='sudo pacman -Syu && flatpak update' # <-- Actualizar todo el sistema (sin incluir AUR) incluyendo Flatpak
+alias cleanup='sudo pacman -Rns (pacman -Qtdq)' # <-- Limpia paquetes huérfanos en Arch Linux
 alias fsh='fastfetch' # <-- Menos letras = Más velocidad
 alias salir='exit' # <-- Españolización
 alias cls='clear' # <-- Menos letras = Más velocidad
@@ -43,6 +45,7 @@ alias l='ls -CFA --color' # <-- Listado en columnas con indicadores de tipo
 # Accesos rápidos a herramientas externas
 # alias icat='kitten icat' # <-- Visor rápida y nativo de imágenes usando la terminal de Kitty
 # alias bloquear='i3lock-fancy -g -p' # <-- Bloquear la pantalla de manera estética y bonita, solo funciona con i3lock instalado
+# alias tub='pipes-rs' # <-- Generación fantástica y atractiva de tuberías (usando Pipes-RS) en la terminal
 
 # =============================================
 # 5.          MANEJO DE ARCHIVOS
@@ -52,3 +55,18 @@ alias untar='tar -xf' # <-- Shortcut para el comando tar, siguiendo como ejemplo
 alias tarnow='tar -acf ' # <-- Crear archivo tar comprimido (ejemplo: tarnow archivo.tar.gz directorio/)
 alias ungz="gunzip -k" # <-- Descomprimir archivos .gz manteniendo el original
 alias wget='wget -c ' # <-- Continuar descargas interrumpidas automáticamente
+
+# =============================================
+# 6.                 GIT
+# =============================================
+# Aliases/shortcuts para un workflow más fluido usando git 
+alias gi='git init' # <-- Inicializar un nuevo repositorio Git
+alias gs='git status' # <-- Ver el estado del repositorio
+alias ga='git add' # <-- Añadir archivos al staging
+alias gaa='git add --all' # <-- Añadir todos los archivos al staging
+alias gc='git commit -m' # <-- Hacer commit con mensaje
+alias glo='git log --oneline' # <-- Ver historial de commits en una línea
+alias glo5='git log --oneline -5' # <-- Ver últimos 5 commits en una línea
+alias gco='git checkout' # <-- Cambiar de rama o versión
+alias gbr='git branch' # <-- Listar, crear o eliminar ramas
+alias gp='git push' # <-- Subir cambios al repositorio remoto
