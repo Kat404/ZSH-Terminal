@@ -46,6 +46,7 @@ alias l='ls -CFA --color' # <-- Listado en columnas con indicadores de tipo
 # alias icat='kitten icat' # <-- Visor rápida y nativo de imágenes usando la terminal de Kitty
 # alias bloquear='i3lock-fancy -g -p' # <-- Bloquear la pantalla de manera estética y bonita, solo funciona con i3lock instalado
 # alias tub='pipes-rs' # <-- Generación fantástica y atractiva de tuberías (usando Pipes-RS) en la terminal
+# alias lg='lazygit' # <-- Uso 'lazy' de git
 
 # =============================================
 # 5.          MANEJO DE ARCHIVOS

@@ -478,7 +478,7 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.a
 1. Crea los archivos necesarios:
 
    ```zsh
-   touch ~/.zshrc_plugins.txt
+   touch ~/.zsh_plugins.txt
    mkdir -p ~/.zshrc.d/
    touch ~/.zshrc.d/aliases.zsh
    touch ~/.zshrc.d/keybindings.zsh
