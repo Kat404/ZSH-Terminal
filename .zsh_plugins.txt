@@ -54,6 +54,3 @@ ohmyzsh/ohmyzsh path:plugins/sudo
 # EN: Change directories with a single command using waypoints (wd)
 # ES: Cambia de directorio con un solo comando usando puntos de guardado (wd)
 ohmyzsh/ohmyzsh path:plugins/wd
-# EN: Helper functions for Python workflows
-# ES: Funciones de ayuda para flujos de Trabajo con Python
-ohmyzsh/ohmyzsh path:plugins/python
