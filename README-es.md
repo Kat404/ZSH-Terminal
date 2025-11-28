@@ -368,16 +368,23 @@ plugins=(
 
 Añade esto a tu `~/.zshrc`, puedes ir a la sección [Antidote](#antidote---gestor-de-plugins-para-zsh) y seguir todo el tutorial para tener una mejor administración y organización de tu `~/.zshrc`:
 
-```zsh
-# Actualización del sistema
-alias update="sudo apt update && sudo apt upgrade -y && flatpak update"
+### Actualización del sistema
 
-# Atajos comunes
+```zsh
+alias update="sudo apt update && sudo apt upgrade -y && flatpak update"
+```
+
+### Atajos comunes
+
+```zsh
 alias cls="clear"
 alias fsh="fastfetch"
 alias nsh="neofetch"
+```
 
-# Comandos en español
+### Comandos en español
+
+```zsh
 alias salir="exit"
 alias ir="cd"
 alias cds="yazi"  # Administrador de archivos
